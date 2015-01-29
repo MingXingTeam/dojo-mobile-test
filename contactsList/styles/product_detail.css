@@ -1,0 +1,219 @@
+.product_detail_main{
+	padding: 10px;
+	background: #ededee;
+	overflow: hidden;/*消除内部的浮动*/
+}
+.product_detail_avatar{
+	width:120px;
+	float:left;
+	height:164px;
+}
+.product_detail_avatar img{
+	border: 2px solid #fff;
+	background: #fff;
+	width:105px;
+	height: 140px;
+	/*css3：设置块阴影*/
+	-webkit-box-shadow: -1px -1px 5px rgba(0,0,0,0.25);/*webkit内核*/
+	-moz-box-shadow: -1px -1px 5px rgba(0,0,0,0.25);/*火狐*/
+	box-shadow: -1px -1px 5px rgba(0,0,0,0.25);
+}
+
+.product_detail_content{
+	float:left;
+	height:164px;
+	padding-top: 5px;
+}
+
+.product_detail_content .productName{
+	margin-bottom: 15px;
+	height:24px;
+}
+.product_detail_content .PM,
+.product_detail_content .productType,
+.product_detail_content .inComming,
+.product_detail_content .price
+{
+	color: #7a8090;
+	font-size: 12px;
+	margin-bottom: 6px;
+}
+
+.product_detail_content .buyBtn{
+	display:block;
+	width: 95px;
+	height: 35px;
+	line-height: 35px;/*居中*/
+	text-align: center;
+	background: #1082ff;
+	color: #fff;
+}
+/*.product_detail_content .buyBtn:hover{
+	background: #1282ff;
+	color:black;
+};*/
+
+.product_detail_description{
+	clear: both;
+}
+.product_detail_description img{
+	width: 100%;
+}
+
+/*导航球*/
+.ballWrap{
+	/*相对顶部定位*/
+	position: fixed;
+	left: 10px;
+	bottom: 94px;
+	/*层级最高*/
+	z-index: 9999;
+	/*overflow: hidden;*/
+	/*设置宽高*/
+	width: 36px;
+	height: 36px;
+	/*内容水平居中*/
+	/*text-align: center;*/
+	/*css3 制作圆*/
+	-moz-border-radius: 40px;
+	-webkit-border-radius: 40px;
+	border-radius: 40px;
+	/*背景黄色*/
+	background: #fd8928;
+	/*边框*/
+	border: 2px solid #fff;
+}
+.ballBtn{
+	width: 36px;
+	height: 36px;
+	line-height: 36px;
+	display: block;
+	text-align: center;
+}
+
+/*登录*/
+.loginMask{
+	height: 100%;
+	width: 100%;
+	position: fixed;
+	z-index: 10000000;
+	top: 0;
+	left: 0;
+	background: #000;
+	opacity: .6;
+	display: none;
+}
+.loginContainerWrap{
+	height: 100%;
+	width: 100%;
+	position: fixed;
+	z-index: 20000000;
+	top: 0;
+	left: 0;
+	display: none;
+}
+.loginContainer{
+	position: absolute;
+	width: 300px;
+	height:180px;
+	font-size: 13px;
+	margin-top: -100px;
+	margin-left: -150px;
+	top: 50%;
+	left: 50%;
+}
+
+.loginFormWrap{
+	padding: 10px;
+	/*圆角*/
+	-webkit-border-radius: 6px;
+	border-radius: 6px;
+	/*块阴影*/
+	-webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.35);
+	box-shadow: 0 1px 3px rgba(0,0,0,0.35);
+	border: 2px solid #cfcfcf;
+	/*线性渐变*/
+	background: -webkit-gradient(linear,left top,left bottom,color-stop(0%,#fff),color-stop(100%,#c5c5c5));
+	/*border:2+2;padding:10+10*/
+	height: 156px;
+	color: #000;
+	font-size: 13px;
+}
+
+.loginFormWrap h2{
+	font-size: 18px;
+	line-height: 20px;
+	height: 30px;
+	text-align: center;
+	color: #818181;
+	font-weight: normal;
+	margin: 0;
+	padding: 0;
+}
+
+.loginFormWrap .main{
+	width: 264px;
+	height: 68px;
+	background: #f0f0f0;
+	margin: 0 auto;
+	border: 1px solid rgba(57,84,106,0.28);
+	-moz-box-shadow: 0 2px 5px rgba(57,84,106,0.28) inset;
+	-webkit-box-shadow: 0 2px 5px rgba(57,84,106,0.28) inset;
+	box-shadow: 0 2px 5px rgba(57,84,106,0.28) inset;
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	border-radius: 6px;
+	color: #676869;
+	margin-bottom: 10px;
+}
+.loginFormWrap label{
+	font-size: 16px;
+}
+.loginFormWrap .main input{
+	margin: 3px 0 0 8px;
+	/*input内部开头*/
+	padding: 0 0 0 10px;
+	font-size: 16px;
+	height: 30px;
+	/*加上margin的值*/
+	line-height: 33px;
+}
+.loginFormWrap .main p{
+	text-align: center;
+	position: relative;
+}
+.loginFormWrap .main p:first-child{
+	border-bottom: 1px solid #cdcdcf;
+}
+
+.loginFormWrap .main .empty{
+	width: 30px;
+	height: 30px;
+	background: url(../images/btn_close.png) no-repeat center center;
+	text-indent: -999em;
+	position: absolute;
+	top: 3px;
+	right: 4px;
+	display: none;
+}
+
+.loginFormWrap .btn{
+	text-align: center;
+	height:30px;
+	line-height: 30px;
+}
+
+.loginFormWrap .btn input{
+	background-color: #5b74a8;
+	border: 1px solid #29447e;
+	font-family: 'Lucida Grande',Tahoma,Verdana,Arial,sans-serif;
+	font-size: 12px;
+	font-weight: 700;
+	padding: 2px 6px;
+	height: 28px;
+	color: #fff;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	width: 120px;
+}

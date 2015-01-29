@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>自定义组件</title>
+	<link rel="stylesheet" href="demo.css">
+	<link rel="stylesheet" href="widget/css/AuthorWidget.css">
+	<script src="../dojo/dojo.js"
+            data-dojo-config="async: true"></script>
+</head>
+<body>
+	<div id="authorContainer"></div>
+	<script>
+		require(["dojo/request", "dojo/dom", "dojo/_base/array", "demo/AuthorWidget", "dojo/domReady!"],
+			function(request, dom, arrayUtil, AuthorWidget){
+			// Load up our authors
+			request("data.json", {
+				handleAs: "json"
+			}).then(function(authors){
+				// Get a reference to our container
+				var authorContainer = dom.byId("authorContainer");
+
+				arrayUtil.forEach(authors, function(author){
+					// Create our widget and place it
+					var widget = new AuthorWidget(author).placeAt(authorContainer);
+				});
+			});
+		});
+	</script>
+</body>
+</html>

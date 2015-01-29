@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="../dojo/dojo.js" data-dojo-config="async:true"></script>
+</head>
+<body>
+	<p><strong>Output:</strong></p>
+	<div id="output"></div>
+	<button type="button" id="startButton">Start</button>
+	<script>
+	require(["dojo/Stateful","dojo/_base/declare","dojo/dom"
+		,"dojo/Deferred"
+		,"dojo/dom-construct","dojo/on","dojo/domReady!"
+		],function(Stateful,declare,dom,Deferred,domConst,on){
+			//定义一个类,继承Stateful(好处是不需要构造函数，有默认的getter和setter函数)
+			var FooClass = declare([Stateful],{
+				//定义一个属性
+				foo:null,
+				//自定义setter方法
+				_fooSetter:function(value){
+					domConst.place("<code>_fooGetter</code> called<br>","output");
+					//创建一个Deferred对象:通过setTimeout创建一个异步任务
+					var d = new Deferred();
+					var self = this;
+					setTimeout(function(){
+						//设置foo属性
+						self.foo = value;
+						//释放延期
+						d.resolve(true);
+					},1000);
+					return d;
+				}
+			});
+
+			var aFoo = new FooClass();
+
+			//定义一个监视属性改变的事件
+			aFoo.watch("foo",function(name,oldValue,value){
+				domConst.place("<code>"+name+"</code> changed from: "+oldValue+" to: "+value+"<br>","output");
+			});
+			
+			//定义一个点击事件
+			on(dom.byId("startButton"),"click",function(){
+				domConst.place("<code>aFoo.set('foo','bar')</code>...<br>","output");
+				aFoo.set("foo","bar");
+			});
+
+		});
+	</script>
+</body>
+</html>

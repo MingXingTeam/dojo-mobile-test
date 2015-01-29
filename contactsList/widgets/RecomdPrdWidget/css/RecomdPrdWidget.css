@@ -1,0 +1,30 @@
+.authorWidget {
+	height:93px;
+	padding: 10px;
+	overflow: hidden; /* I hear this helps clear floats inside */
+	padding: 10px;
+	background: #fff;
+	border-bottom: 1px solid #abb0bd;
+}
+
+.authorWidgetAvatar {
+	float: left;
+	width: 70px;
+	height:93px;
+}
+.authorWidgetContentWrap{
+	float:left;
+	height:93px;
+	padding-top: 10px;
+}
+
+.authorWidgetName{
+	height:28px;
+}
+
+.authorWidgetMoney,.authorWidgetStyle,.authorWidgetIncoming{
+	height:18px;
+	font-size: 12px;
+	color: #7a8090;
+}
+

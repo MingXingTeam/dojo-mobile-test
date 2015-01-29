@@ -1,0 +1,56 @@
+<div>
+	<div>
+		<div data-dojo-type="dojox/mobile/Heading"
+		 data-dojo-props='label:"产品详情",back:""' 
+		 data-app-constraint="top"
+	     data-dojo-attach-point="dap_heading"
+		 >
+			<span style="float:right;padding: 10px;" class="icon-share"></span>
+		</div>
+		
+		<div class="product_detail_main">
+            <div class="product_detail_avatar">
+               <img id="Avatar" src="" alt="">
+            </div>
+            <div class="product_detail_content">
+            	<p class="productName" id="productName">重投组2号</p>
+               	<p class="PM"><span class="icon-head"></span>&nbsp;产品经理：<span id="PM">吴海荣</span></p>
+               	<p class="productType"><span class="icon-air-play"></span>&nbsp;产品类型：<span id="productType">稳健性</span></p>
+               	<!-- <p class="inComming"><span class="icon-speech-bubble"></span>&nbsp;收益率：<span id="inComming">15.08</span></p> -->
+               	<p class="price"><span class="icon-monitor"></span>&nbsp;价格：<span id="price">400</span>元/月</p>
+                <div>
+                    <a href="###" id="buyBtn" class="buyBtn">立即购买</a>
+                </div>
+            </div>
+            <div class="product_detail_description">
+            	<img id="description" src="" alt="">
+            </div>
+    </div>
+
+    <div class="loginMask" id="loginMask"></div>
+    <div class="loginContainerWrap" id="loginContainerWrap">
+      <div class="loginContainer">
+          <div class="loginFormWrap">
+            <form action="">
+              <h2>请先登录</h2>
+              <fieldset class="main">
+                <p>
+                  <label>帐号</label>
+                  <input type="text"  name="account" required="required" id="acct" placeholder="请输入资金账号">
+                  <a class="empty" id="emptyAccount">清除 </a>
+                </p>
+                <p>
+                  <label>密码</label>
+                  <input type="password" name="password" required="required" id="pwd" placeholder="请输入交易密码">
+                  <a class="empty" id="emptyPassword">清除 </a>
+                </p>
+              </fieldset>
+              <div class="btn">
+                <input type="submit" id="submit" class="login" value="登   录">
+                <input type="button" id="cancel" class="cancel" value="取   消">
+              </div>
+            </form>
+          </div>
+      </div>
+    </div>
+</div>

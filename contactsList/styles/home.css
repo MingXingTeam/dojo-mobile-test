@@ -1,0 +1,107 @@
+/*reset*/
+body, h1, h2, h3, h4, ul, ol, li, form, fieldset, legend, button, input, textarea, p, dd, dt, dl {
+	margin:0;
+	padding:0;
+	border:0 none;
+	font:12px;
+}
+ul li{ list-style:none;}
+a{ text-decoration: none;}
+/*header*/
+/*#header{
+background:red;}*/
+/*sidebar*/
+#sidebar_menu{
+	float:left;margin-left:16px;margin-top:10px;
+}
+#sidebar_wrap{
+	position:relative
+}
+#sidebar{
+	background-color:white;
+	width:160px;
+	/*height:999px;*/
+	height:600px;
+	position:absolute;top:0;left:-999px;z-index:100;opacity:0.9
+}
+/*nav*/
+/*#nav{
+	width: 100%;
+	background: rgb(181, 160, 160);
+	height:22px;
+}
+#nav ul{
+	width: 100%;
+	float: left;
+	height:22px;
+}
+#nav li{
+	float:left;
+	text-align: center;
+	height:22px;
+	line-height: 22px;
+	width:20%;
+	color:#e2eeee;
+	background: rgb(169, 137, 137);
+	list-style: none;
+}
+#nav a{
+	padding: 2px;
+}
+#nav a:hover{
+	color:#eee;
+	background: #999;
+	text-decoration: underline;
+}
+#nav .active {
+	text-decoration: underline;
+	color:red;
+	background: #ccc;
+}*/
+/*首页幻灯片*/
+.slide_wrap{
+	text-align: center;
+	width:100%;
+	height:200px;
+	margin-bottom: 20px;
+	position: relative;
+}
+.slide_wrap img{
+	padding:4px;
+	width:100%;
+	height:200px;
+}
+.slide_wrap .rotatorWrap{
+	height:200px;
+}
+.slide_wrap .rotator{
+	height:200px;
+}
+
+.slide_wrap .pane{
+	width:100%;
+	height:200px;
+}
+.controllerWrap{
+	position: absolute;
+	bottom: 8px;
+	right:12px;
+	z-index: 9999;
+}
+.controllerWrap a{
+	margin: 0px 3px;
+	width: 6px;
+	height: 6px;
+	display: block;
+	font-size: 1px;
+	background-color: #949294;
+	border-radius: 3px;
+}
+.controllerWrap .selected{
+	background-color: #007aff;
+}
+/*恒泰推荐产品*/
+#recomdPct img{
+	height:80px;
+	padding:10px;
+}

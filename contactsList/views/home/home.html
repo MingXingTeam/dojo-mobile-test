@@ -1,0 +1,94 @@
+<div>
+	<div data-dojo-type="dojox/app/widgets/Container" data-app-constraint="center" data-dojo-props="scrollable: true">
+		<!-- 首页幻灯片 -->
+		<div class="slide_wrap" >
+			<div class="rotatorWrap">
+				<div data-dojo-type="dojox/widget/AutoRotator" 
+				data-dojo-props="duration:2500,
+				onUpdate:function(e){hh(e);}
+				" class="rotator" id="myAutoRotator" data-dojo-id="myAutoRotatorInstance2"
+				data-dojo-attach-point="dap_autoRotator"
+				>
+					<div
+						 data-dojo-props='height:"200px"'
+						 data-dojo-attach-point="dap_wrap_img0"
+					     class="pane pane0"
+						>
+						<img  id="slide_img0" src="images/2.jpg">
+					</div>
+					<div
+					 data-dojo-props='height:"200px"'
+						data-dojo-attach-point="dap_wrap_img1"
+						class="pane pane1"
+					>
+						<img id="slide_img1" src="images/1.jpg">
+					</div>
+
+					<div
+						 data-dojo-props='height:"200px"'
+						 data-dojo-attach-point="dap_wrap_img2"
+						 class="pane pane2"
+						>
+						<img  id="slide_img2" src="images/2.jpg">
+					</div>
+					<div
+						 data-dojo-props='height:"200px"'
+						 data-dojo-attach-point="dap_wrap_img3"
+						 class="pane pane3"
+						>
+						<img  id="slide_img3" src="images/2.jpg">
+					</div>
+								<!-- <div data-dojo-type="dojox/mobile/PageIndicator"
+       data-dojo-props='fixed:"bottom"'></div> -->
+				</div>	
+			</div>
+<!-- <div data-dojo-type="dojox.widget.rotator.Controller" data-dojo-props="rotator:myAutoRotatorInstance2,
+
+"></div> -->
+			<!-- 幻灯片控制器 -->
+			<div class="controllerWrap">
+				<table>
+					<tr>
+						<td>
+					 		<a class="navdot selected"></a>
+					 	</td>
+					 	<td>
+					 		<a class="navdot"></a>
+					 	</td>
+					 	<td>
+					 		<a class="navdot"></a>
+					 	</td>
+					 	<td>
+					 		<a class="navdot"></a>
+					 	</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+		<!-- 首页导航 -->
+		<ul data-dojo-type="dojox/mobile/TabBar" data-dojo-props='barType:"slimTab",center:false'>
+		  <li data-dojo-type="dojox/mobile/TabBarButton" data-dojo-props='selected:true'
+			data-dojo-attach-point="dap_tab_recomd_product"
+		  >恒泰推荐产品</li>
+		  <li data-dojo-type="dojox/mobile/TabBarButton" data-dojo-props=''
+			data-dojo-attach-point="dap_tab_sellrank"
+		  >销售排行</li>
+		  <li data-dojo-type="dojox/mobile/TabBarButton" data-dojo-props=''
+			data-dojo-attach-point="dap_tab_viewpoint"
+		  >恒泰视点</li>
+		</ul>
+		<!-- 恒泰推荐产品 -->
+		<div id="recomdPct"  style="display:none;">
+			<ul id="recomPct_ul"></ul>
+			<!-- <div id="recomPct_ul"></div> -->
+		</div>
+		<!-- 销售排行 -->
+		<div id="sellrank" style="display:none;">
+			销售排行
+		</div>
+		<!-- 恒泰视点 -->
+		<div id="viewpoint"  style="display:none;">
+			恒泰视点
+		</div>
+	</div>
+</div>

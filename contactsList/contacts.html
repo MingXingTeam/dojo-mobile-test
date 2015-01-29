@@ -1,0 +1,55 @@
+<!DOCTYPE HTML>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no"/>
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+
+		<title>Contacts List Demo: Using dojox/app</title>
+		<link rel="stylesheet" type="text/css" href="feather-webfont/feather.css">
+		<link rel="stylesheet" type="text/css" href="styles/home.css">
+		<link rel="stylesheet" href="widgets/RecomdPrdWidget/css/RecomdPrdWidget.css">
+		<link rel="stylesheet" href="styles/product_detail.css">
+		<link rel="stylesheet" href="styles/product_center2.css">
+		<link rel="stylesheet" href="styles/RGPrd.css">
+		<link rel="stylesheet" href="widgets/TGPrdWidget/css/TGPrdWidget.css">
+
+		<script src="../contactsList/config/initConstants.js"></script>
+		<script src="../dojo/dojo.js"
+            data-dojo-config="async: true"></script>
+		
+	</head>
+	<body id="body">
+		<script>
+			require(["contactsList/contacts","../dojox/mobile/deviceTheme.js"
+				// ,"dijit/registry","../dojo/on"
+				],function(app,deviceTheme
+					// ,registry
+					){
+				//设置主题
+				deviceTheme.loadDeviceTheme("ios7");
+				//
+				// console.debug(on);
+				// on(registry.byId("mask"),"click",function(){
+				// 	alert();
+				// 	this.show();
+				// });
+			});
+		</script>
+
+		<!-- 公共导航小球 -->
+		<!-- <div ball="" class="ballWrap">
+			<a class="ballBtn">
+				<span class="icon-grid" style="color: #fff;"></span>
+			</a>
+		</div> -->
+
+		<!-- 导航球的遮罩 -->
+		<!-- <div id="mask" data-dojo-type="dojox/mobile/Overlay" style="width:100%;background:black;height:100%;opacity:0.3;line-height:99px;text-align:center;">
+		     <span style="color:blue;background:red;">
+		      	asdfasf
+		      </span>
+		</div> --> 
+
+	</body>
+</html>

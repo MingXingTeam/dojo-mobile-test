@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="../dojo/dojo.js" data-dojo-config="async:true"></script>
+</head>
+<body>
+<h1>Output:</h1>
+<div id="output">Not yet started.</div>
+<button type="button" id="startButton">Start</button>
+	<script>
+	require(["dojo/Deferred"
+		,"dojo/dom"
+		,"dojo/on"
+		,"dojo/domReady!"
+		],function(Deferred
+			,dom
+			,on){
+			//一个异步任务
+			function asyncProcess(msg){
+				var timeout;
+				var deferred = new Deferred(function(reason){
+					//取消异步任务时执行
+					clearTimeout(timeout);
+					dom.byId("output").innerHTML+="<br>I was cancelled with reason:"+reason;
+				});
+
+
+				dom.byId("output").innerHTML+="<br>I am running...";
+				//执行一个异步任务：调用process.cancel("goodbye");取消后该函数不会执行
+				timeout = setTimeout(function(){
+					dom.byId("output").innerHTML+="<br> My process completed!";
+					deferred.resolve("finished");
+				},2000);
+
+				return deferred.promise;
+				// return deferred;deferred是私有接口不能直接返回
+			}
+
+			on(dom.byId("startButton"),"click",function(){
+				//获取返回的promise接口
+				var process = asyncProcess("first");
+				//调用promise接口的then方法注册一个回调函数
+				process.then(function(results){
+					dom.byId("output").innerHTML += "<br />I am finished,and the results were:"+results;
+				});
+
+				setTimeout(function(){
+					process.cancel("goodbye");
+				},1000);
+
+			});
+		});
+	</script>
+</body>
+</html>

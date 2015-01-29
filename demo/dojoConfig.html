@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="demo.css">
+	<style>
+	#dialog { min-width: 200px; }
+	</style>
+	<script>
+	    dojoConfig= {
+	    	app: {
+	            userName: "Anonymous"
+	        }
+	        // has: {
+	        //     "dojo-firebug": true,
+	        //     "dojo-debug-messages": true,
+	        //     "dojo-amd-factory-scan": false
+	        // }
+	        //,
+	        //Don't attempt to parse the page for widgets
+	  //       parseOnLoad: false,
+	  //       foo: "bar",
+	  //       async: true,
+	  //       packages: [
+		 //        { name: "package1", location: "../lib/package1" },
+		 //        { name: "package2", location: "/js/package2" }
+		 //    ],
+		 //    deps: ["dojo/parser"],
+		 //    callback: function(parser) {
+			//     // Use the resources provided here
+			// },
+			// map: {//简写
+	  //           // Instead of having to type "dojo/domReady!", we just want "ready!" instead
+	  //           "*": {
+	  //               ready: "dojo/domReady"
+	  //           }
+	  //       },
+			// waitSeconds: 5//加载等待时间
+			// cacheBust: true//去掉加载模板的缓存cacheBust:new Date()
+	    };
+	</script>
+	<script src="../dojo/dojo.js"></script>
+</head>
+<body>
+	<div id="dialog" data-dojo-type="dijit/Dialog" data-dojo-props="title: 'dojo/_base/_config'"></div>
+	<script>
+		require(["dijit/registry", "dojo/parser", "dojo/json", "dojo/_base/config","dojo/io-query"
+			,"dojo/_base/lang"
+			, "dijit/Dialog",  "dojo/domReady!"],
+				function(registry, parser, JSON, config,ioQuery,lang,Dialog) {
+					// Explicitly parse the page
+					parser.parse();
+					// // Find the dialog
+					// var dialog = registry.byId("dialog");
+					// // Set the content equal to what dojo.config is
+					// dialog.set("content", '<pre>' + JSON.stringify(config, null, '\t') + '</pre>');
+					// // Show the dialog
+					// dialog.show();
+					console.info(location);
+					console.info(location.search);
+					console.info(location.search.substring(1));
+					//返回请求对象
+					var queryParams = ioQuery.queryToObject(location.search.substring(1));
+					//将queryParams拷贝到config.app
+			        lang.mixin(config.app, queryParams);
+			 
+			        // Create a dialog
+			        var dialog = new Dialog({
+			            title: "Welcome back " + config.app.userName,
+			            content: "<pre>" + JSON.stringify(config, null, "\t") + "</pre>"//JSON.stringify:JSON对象转为字符串
+			        });
+			 
+			        // Draw on the app config to put up a personalized message
+			        dialog.show();
+			});
+	</script>
+</body>
+</html>

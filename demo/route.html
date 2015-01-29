@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="../dojo/dojo.js" data-dojo-config="async:true"></script>
+</head>
+<body>
+<button type="button" id="changeHash">Change Hash</button>
+<div id="output"></div>
+	<script>
+	require(["dojo/router"
+		,"dojo/dom"
+		,"dojo/on"
+		,"dojo/request"
+		,"dojo/json"
+		,"dojo/domReady!"
+		],function(router,dom,on,request,JSON){
+			router.register("foo/bar",function(evt){
+				evt.preventDefault();
+				request.post("data.json",{
+					handleAs:"json"
+					// ,
+					// query:{
+					// 	rType:0
+					// }
+				}).then(function(response){
+					dom.byId("output").innerHTML = JSON.stringify(response);
+				});
+			});
+
+			//启动路由控制
+			router.startup();
+
+			on(dom.byId("changeHash"), "click", function(){
+				//跳转到指定url
+			    router.go("foo/bar");
+			});
+		});
+	</script>
+</body>
+</html>

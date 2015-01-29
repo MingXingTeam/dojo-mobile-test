@@ -1,0 +1,70 @@
+.container{
+	width: 100%;
+	max-width: 640px;
+	min-width: 320px;
+	margin:0 auto;
+	margin-top: 6px;
+}
+.container ul{
+	width: 47%;
+	list-style: none;
+	float: left;
+	margin-left: 3%;
+}
+
+/*.container li{
+	background-color: #FFF;
+	margin-bottom: 15px;
+	border-color: #e6e6e6 #c8c7c7 #a6a6a6 #c7c8c7;
+	border-radius: 8px;
+	border-style: solid;
+	border-width: 1px;
+	border-top: none;
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.container a{
+	outline-style: none;
+	color: #5a5a5a;
+	text-decoration: none;
+}
+
+.container img{
+	width: 100%;
+	height: auto;
+	border-radius: 8px 8px 0 0;
+	vertical-align: bottom;
+}
+
+.container .des{
+	font-size: 16px;
+	padding: 4%;
+	line-height: 22px;
+	color: #575757;
+	border-bottom: 1px #dadada solid;
+}*/
+
+
+/*返回到顶部*/
+.backToTop{
+	overflow: hidden;
+	position: absolute;
+	position: fixed;
+	z-index: 99999;
+	right: 14px;
+	bottom: 50px;
+	width: 32px;
+	height: 32px;
+	-moz-border-radius: 40px;
+	-webkit-border-radius: 40px;
+	border-radius: 40px;
+	background: #fd8928;
+}
+
+.backToTop span{
+	position: fixed;
+	z-index: 10000000;
+	right: 21px;
+	bottom: 58px;
+	color:#fff;
+}

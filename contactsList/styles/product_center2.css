@@ -1,0 +1,106 @@
+.searchHead{
+	background-color: #ebebeb;
+	height: 60px;
+	text-align: center;
+	line-height: 60px;
+	position: relative;
+}
+.searchWrap{
+	position: absolute;
+	top:50%;
+	left:0;
+	height: 28px;
+	margin: 8px 0 0;
+	margin-top: -14px;
+	-moz-border-radius: 20px;
+	-webkit-border-radius: 20px;
+	border-radius: 20px;
+	background: rgba(0,0,0,0.3);
+	color: #fff;
+	width:100%;
+}
+.searchFormWrap{
+	width:84%;		
+	/*float: left;*/
+	position: absolute;
+	top:50%;
+	left:0;
+	height: 20px;
+	margin-top: -10px;
+}
+.searchInput{
+	width: 96%;	
+	position: absolute;
+	top:50%;
+	left:0;
+	height: 20px;
+	margin-top: -10px;
+	line-height: 20px;
+	margin-left: 5px;
+	padding-left: 12px;
+	background: transparent;
+	border: 0;
+	color: #fff;
+	font-size: 16px;
+}
+input::-webkit-input-placeholder{
+	color:#fff;
+}
+.searchBtnWrap{
+	overflow: hidden;
+	width: 16%;
+	position: absolute;
+	top:50%;
+	right:0;
+	height: 20px;
+	margin-top: -10px;
+}
+.searchBtn{
+	width: 100%;
+	height: 24px;
+	position: absolute;
+	top:50%;
+	right:0;
+	margin-top: -12px;
+	-moz-border-radius: 20px;
+	-webkit-border-radius: 20px;
+	border-radius: 20px;
+	background: rgba(0,0,0,0.3);
+}
+
+/*产品格子*/
+.catalogTitle{
+	margin: 0;
+	padding: 0;
+	background-color: #fff;
+	color: #000;
+	font-size: 16px;
+	padding: 6px 12px;
+	margin-top: 10px;
+	border-top: 1px solid #cbcbcb;
+}
+.gridWrap{
+	padding: 6px 12px;
+}
+.cellWrap{
+	width:100%;
+	text-align: center;
+	/*overflow: hidden;*/
+}
+
+.cellWrap img{
+	width: 96%;
+	margin-bottom: 3px;
+	margin-top: 3px;
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 2px;
+	border-radius: 2px;
+	-webkit-box-shadow: -1px -1px 5px rgba(0,0,0,0.25);
+	-moz-box-shadow: -1px -1px 5px rgba(0,0,0,0.25);
+	box-shadow: -1px -1px 5px rgba(0,0,0,0.25);
+}
+
+.cellWrap p span{
+	float: left;
+	margin-left: 12px;
+}

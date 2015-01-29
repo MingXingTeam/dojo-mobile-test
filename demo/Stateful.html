@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="../dojo/dojo.js" data-dojo-config="async:true"></script>
+</head>
+<body>
+	<p><strong>Output:</strong></p>
+	<div id="output"></div>
+	<button type="button" id="startButton">Start</button>
+	<script>
+	require(["dojo/Stateful","dojo/_base/declare","dojo/dom"
+		,"dojo/dom-construct","dojo/on","dojo/domReady!"
+		],function(Stateful,declare,dom,domConst,on){
+			//定义一个类,继承Stateful(好处是不需要构造函数，有默认的getter和setter函数)
+			var FooClass = declare([Stateful],{
+				//定义一个属性
+				foo:null,
+				_fooGetter:function(){
+					domConst.place("<code>_fooGetter</code> called.","output");
+					return this.foo;
+				},
+				_fooSetter:function(value){
+					domConst.place("<code>_fooSetter</code> called.","output");
+					this.foo = value;
+				}
+			});
+
+			//定义一个事件
+			on(dom.byId("startButton"),"click",function(){
+				//创建一个对象:会调用_fooGetter方法和_fooSetter方法
+				var aFoo = new FooClass({
+					foo:"bar"
+				});
+				// alert(aFoo.foo);
+				// aFoo.get("属性名") 会调用_fooGetter方法
+				domConst.place("<code>aFoo.get('foo')</code>:"+aFoo.get("foo")+"<br>","output");
+				domConst.place("<code>aFoo.set('foo','test')</code><br>","output");
+				//会调用_fooGetter方法和_fooSetter方法
+				aFoo.set("foo","test");
+			});
+		});
+	</script>
+</body>
+</html>

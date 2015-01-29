@@ -1,0 +1,68 @@
+{
+	"id": "contactsApp",
+	"dependencies": [
+		"dojo/store/Observable",
+		"dojox/mobile/Heading",
+		"dojox/mobile/ScrollableView",
+		"dojox/mobile/ToolBarButton",
+		"dojo/store/JsonRest"
+	],
+	"controllers": [
+		"dojox/app/controllers/Load",
+		"dojox/app/controllers/Transition",
+		"dojox/app/controllers/Layout"
+	],
+	"defaultTransition": "slide",
+	"defaultView": "index,home",
+	"views": {
+		"index": {
+			"template": "contactsList/views/index.html",
+			"controller": "contactsList/views/index",
+			"defaultView": "home",
+			"defaultTransition": "slide",
+			"views": {
+				"home":{
+					"template": "contactsList/views/home/home.html",
+					"controller": "contactsList/views/home/home.js"
+				},
+				"product_center":{
+					"template": "contactsList/views/product_center/product_center2.html",
+					"controller": "contactsList/views/product_center/product_center2.js"
+				},
+				"info_center":{
+					"template": "contactsList/views/info_center/info_center.html",
+					"controller": "contactsList/views/info_center/info_center.js"
+				}
+			}
+		},
+		"product_detail":{
+			"defaultTransition": "flip",
+			"template": "contactsList/views/product_center/product_detail.html",
+			"controller": "contactsList/views/product_center/product_detail.js"
+		},
+		"tg_product":{
+			"template": "contactsList/views/product_center/TGPrd.html",
+			"controller": "contactsList/views/product_center/TGPrd.js"
+		},
+		"list": {
+			"controller": "contactsList/views/list",
+			"template": "contactsList/views/list.html"
+		},
+		"anotherList":{
+			"controller": "contactsList/views/anotherList",
+			"template": "contactsList/views/anotherList.html"
+		}
+	},
+	"has" : {
+		"ie9orLess" : {
+			"controllers": [
+				"dojox/app/controllers/HistoryHash"
+			]
+		},
+		"!ie9orLess" : {
+			"controllers": [
+				"dojox/app/controllers/History"
+			]
+		}
+	}	
+}

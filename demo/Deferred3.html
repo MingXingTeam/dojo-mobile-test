@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="../dojo/dojo.js" data-dojo-config="async:true"></script>
+</head>
+<body>
+<h1>Output:</h1>
+<div id="output">Not yet started.</div>
+<button type="button" id="startButton">Start</button>
+	<script>
+	require(["dojo/Deferred"
+		,"dojo/dom"
+		,"dojo/on"
+		,"dojo/domReady!"
+		],function(Deferred
+			,dom
+			,on){
+			//一个异步任务
+			function asyncProcess(msg){
+				var deferred = new Deferred();
+				dom.byId("output").innerHTML += "<br />I am running...";
+				setTimeout(function(){
+					deferred.progress("halfway");
+				},1000);
+
+				setTimeout(function(){
+					deferred.resolve("finished");
+				},2000);
+
+				setTimeout(function(){
+					deferred.reject("ooops");
+				},1500);
+
+				return deferred.promise;
+				// return deferred;deferred是私有接口不能直接返回
+			}
+
+			on(dom.byId("startButton"),"click",function(){
+				//获取返回的promise接口
+				var process = asyncProcess("first");
+				//调用promise接口的then方法注册一个回调函数
+				process.then(function(results){
+					dom.byId("output").innerHTML += "<br />I am finished,and the results were:"+results;
+				},function(error){
+					dom.byId("output").innerHTML += "<br />I errored out with:"+error;
+				},function(process){
+					dom.byId("output").innerHTML += "<br />I made some progress:"+process;
+				});
+			});
+		});
+	</script>
+</body>
+</html>

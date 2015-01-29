@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="../dojo/dojo.js" data-dojo-config="async:true"></script>
+</head>
+<body>
+	<p><strong>Output:</strong></p>
+	<div id="output"></div>
+	<button type="button" id="startButton">Start</button>
+	<script>
+	require(["dojo/Deferred"
+		,"dojo/dom"
+		,"dojo/on"
+		,"dojo/domReady!"
+		],function(Deferred
+			,dom
+			,on){
+			//一个异步任务
+			function asyncProcess(){
+				var deferred = new Deferred();
+				dom.byId("output").innerHTML = "I am running...";
+				setTimeout(function(){
+					//异步任务执行结束："success"作为结果给回调函数
+					deferred.resolve("success");
+				},1000);
+				return deferred.promise;
+				// return deferred;deferred是私有接口不能直接返回
+			}
+
+			on(dom.byId("startButton"),"click",function(){
+				//获取返回的promise接口
+				var process = asyncProcess();
+				//调用promise接口的then方法注册一个回调函数
+				process.then(function(results){
+					dom.byId("output").innerHTML = "I am finished,and the results were:"+results;
+				});
+			});
+		});
+	</script>
+</body>
+</html>
